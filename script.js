@@ -1,3 +1,21 @@
+'use strict';
+
+//Усложненное задание к уроку 4
+let operationWithString = function (str) {
+  if (typeof str !== 'string') {
+    return "Не строка";
+  }
+  str = str.trim();
+  if (str.length > 30) {
+    str = str.slice(0, 30);
+    str += "...";
+  }
+  return str;
+};
+
+console.log(operationWithString(prompt("Введите строку:")));
+
+/*
 //Усложненное задание к уроку 2
 let num = 266219;
 num = num.toString(); 
@@ -50,4 +68,4 @@ console.log(daysArray[1][daysArray[0].indexOf(lang)]);
 let namePerson = prompt('Введите ваше имя:', 'Артем');
 (namePerson === 'Артем') ? console.log('Директор') :
   (namePerson === 'Максим') ? console.log('Преподаватель') :
-  console.log('Студент');
+  console.log('Студент');*/
