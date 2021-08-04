@@ -1,5 +1,52 @@
 'use strict';
 
+//Усложненное задание к уроку 5
+//часть 1
+let isNumber = function (n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+};
+
+let getNumbers = function (arr) {
+  for (let i = 0; i < 7; i++) {
+    do {
+      arr[i] = prompt(`Введите ${i+1}-е число:`);
+    } while (!isNumber(arr[i]));
+    
+  }
+  return arr;
+};
+
+let outputNumbers = function (arr) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i][0] === '2' || arr[i][0] === '4') {
+      console.log(arr[i]);
+    }
+  }
+};
+
+let arr = [];
+getNumbers(arr);
+outputNumbers(arr);
+
+//часть 2
+let outputPrimeNumbers = function (start, end) { 
+  for (let i = start; i <= end; i++) {
+    let dividers = 0;
+    for (let j = 1; j <= i; j++) {
+      if (i % j === 0) {
+        ++dividers;
+      }
+    }
+    if (dividers <= 2) {
+      console.log(i + " - простое число. Делители этого числа - 1 и " + i);
+    }
+  }
+};
+
+outputPrimeNumbers(1, 100);
+
+
+/*
 //Усложненное задание к уроку 4
 let operationWithString = function (str) {
   if (typeof str !== 'string') {
@@ -15,7 +62,7 @@ let operationWithString = function (str) {
 
 console.log(operationWithString(prompt("Введите строку:")));
 
-/*
+
 //Усложненное задание к уроку 2
 let num = 266219;
 num = num.toString(); 
